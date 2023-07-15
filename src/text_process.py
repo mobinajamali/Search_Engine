@@ -23,7 +23,7 @@ class ConvertCase(TextProcessor):
 
 class RemoveDigit(TextProcessor):
     def transform(self, text):
-        return ''.join(filter(lambda char: not char.isdigit(), text))
+        return ''.join(char if not char.isdigit() else ' ' for char in text)
 
 
 class RemoveSpace(TextProcessor):
